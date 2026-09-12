@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Care Salon Fleur（ケアサロン フルール）のブログ記事一覧。営業日カレンダーや、妊活・マタニティ・産後の骨盤ケアに関する情報をお届けします。">
+    <title>ブログ一覧 | Care Salon Fleur（ケアサロン フルール）</title>
+
+    <!-- ファビコン -->
+    <link rel="icon" type="image/png" href="img/caresalonfleur.png">
+    <link rel="apple-touch-icon" href="img/caresalonfleur.png">
+
+    <!-- OGP設定 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ブログ一覧 | Care Salon Fleur（ケアサロン フルール）">
+    <meta property="og:description" content="営業日カレンダーや、妊活・マタニティ・産後の骨盤ケアに関する情報をお届けします。">
+    <meta property="og:url" content="https://caresalonfleur.net/bloglist.html">
+    <meta property="og:site_name" content="Care Salon Fleur">
+    <meta property="og:image" content="https://caresalonfleur.net/img/caresalonfleur_top.jpg">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog-list.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="page-blog-list">
+    <!-- ヘッダー（下層ページでは常時表示） -->
+    <header class="header header-visible header-static">
+        <div class="header-container">
+            <div class="logo">
+                <a href="./"><img src="img/caresalonfleur.png" alt="Care Salon Fleur"></a>
+            </div>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="./#home" class="nav-link">ホーム</a></li>
+                    <li><a href="./#about" class="nav-link">サロンについて</a></li>
+                    <li><a href="./#menu" class="nav-link">メニュー・料金</a></li>
+                    <li><a href="./#salon" class="nav-link">サロンのご紹介</a></li>
+                    <li><a href="bloglist.html" class="nav-link active">ブログ</a></li>
+                    <li><a href="./#access" class="nav-link">アクセス</a></li>
+                    <li><a href="./#contact" class="nav-link">ご予約・お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="header-sns">
+                <a href="https://www.instagram.com/care.salon_fleur" target="_blank" rel="noopener noreferrer" class="header-sns-link">
+                    <img src="img/Instagram_Glyph_Gradient-copy.png" alt="Instagram">
+                </a>
+                <a href="https://lin.ee/3vWXQgh" target="_blank" rel="noopener noreferrer" class="header-sns-link">
+                    <img src="img/LINE_Brand_icon.png" alt="LINE">
+                </a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Blog List Section -->
+    <main>
+        <section class="blog blog-list-section" id="blog">
+            <div class="handdrawn-circle handdrawn-circle-1" style="top: 8%; right: 5%;"></div>
+            <div class="handdrawn-circle handdrawn-circle-2" style="top: 45%; left: 4%;"></div>
+            <div class="handdrawn-circle handdrawn-circle-3" style="bottom: 8%; right: 10%;"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">BLOG</h1>
+                    <p class="section-subtitle">ブログ</p>
+                </div>
+                <div class="blog-content">
+                    <p class="blog-intro">営業日のお知らせや、妊活・マタニティ・産後のからだに役立つ情報をお届けしています。</p>
+
+                    <!-- カテゴリー絞り込み（WordPressから自動取得） -->
+                    <nav class="blog-categories" id="blog-categories" aria-label="カテゴリー"></nav>
+
+                    <!-- 記事一覧（WordPressから自動取得） -->
+                    <div id="blog-list" class="blog-list" aria-live="polite">
+                        <p class="blog-loading">記事を読み込み中...</p>
+                    </div>
+
+                    <!-- ページネーション -->
+                    <nav class="blog-pagination" id="blog-pagination" aria-label="ページ送り"></nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-name">care salon Fleur</p>
+                <p class="footer-back"><a href="./">トップページへ戻る</a></p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Care Salon Fleur. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/blog-list.js"></script>
+</body>
+</html>

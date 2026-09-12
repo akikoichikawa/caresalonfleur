@@ -1,0 +1,294 @@
+/* ==========================================
+   Blog List Page (bloglist.html)
+   style.css の共通スタイルを前提とした追加スタイル
+   ========================================== */
+
+/* 下層ページではヘッダーを常時表示し、その分だけ本文を下げる */
+.header-static {
+    position: sticky;
+    transform: none;
+}
+
+.page-blog-list .blog-list-section {
+    min-height: calc(100vh - 100px);
+}
+
+.blog-list-section .section-title {
+    /* h1 でも見出しサイズは section-title に合わせる */
+    font-size: 36px;
+}
+
+/* ==========================================
+   カテゴリー絞り込み
+   ========================================== */
+.blog-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.blog-category-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    background-color: var(--white);
+    color: var(--text-light);
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blog-category-btn:hover {
+    background-color: rgba(184, 212, 176, 0.2);
+    color: var(--text-dark);
+}
+
+.blog-category-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* ==========================================
+   記事一覧（カード型）
+   ========================================== */
+.blog-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.blog-card-list {
+    list-style: none;
+    display: grid;
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.blog-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+}
+
+.blog-card.is-visible:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.blog-card-link {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    color: var(--text-dark);
+}
+
+.blog-card-link.no-thumb {
+    grid-template-columns: 1fr;
+}
+
+.blog-card-thumb {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-light);
+}
+
+.blog-card-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(184, 212, 176, 0.15);
+    pointer-events: none;
+}
+
+.blog-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-card-body {
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.blog-card-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: var(--text-light);
+}
+
+.blog-card-category {
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 2px 12px;
+    border-radius: 50px;
+    background-color: rgba(184, 212, 176, 0.25);
+    color: var(--text-dark);
+}
+
+.blog-card-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+}
+
+.blog-card:hover .blog-card-title {
+    color: var(--accent-color);
+}
+
+.blog-card-excerpt {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-light);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-card-more {
+    margin-top: auto;
+    align-self: flex-end;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+}
+
+.blog-card-more::after {
+    content: ' →';
+}
+
+/* ==========================================
+   ページネーション
+   ========================================== */
+.blog-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 50px;
+}
+
+.blog-pagination:empty {
+    display: none;
+}
+
+.blog-page-btn {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--text-light);
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blog-page-btn:hover:not(:disabled) {
+    background-color: rgba(184, 212, 176, 0.2);
+    color: var(--text-dark);
+}
+
+.blog-page-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.blog-page-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.blog-page-btn.prev,
+.blog-page-btn.next {
+    border-radius: 50px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    padding: 0 18px;
+}
+
+/* ==========================================
+   フッター
+   ========================================== */
+.footer-back {
+    margin-top: 15px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.footer-back a {
+    color: var(--text-light);
+    border-bottom: 1px solid transparent;
+}
+
+.footer-back a:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (max-width: 768px) {
+    .blog-list-section .section-title {
+        font-size: 28px;
+    }
+
+    .blog-card-link {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-card-thumb {
+        aspect-ratio: 16 / 9;
+    }
+
+    .blog-card-body {
+        padding: 20px;
+    }
+
+    .blog-card-title {
+        font-size: 16px;
+    }
+
+    .blog-categories {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-list-section .section-title {
+        font-size: 24px;
+    }
+
+    .blog-page-btn.prev,
+    .blog-page-btn.next {
+        padding: 0 12px;
+    }
+}
